@@ -1,0 +1,141 @@
+{
+  "name": "photoccrop",
+  "version": "1.0.0",
+  "description": "Herramienta de Recorte Circular para Credenciales - CLI y GUI",
+  "main": "gui/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "cli": "node cli/photoCcrop.js",
+    "pkg:cli": "pkg cli/photoCcrop.js --out-path dist/cli",
+    "clean": "rimraf dist",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "image-processing",
+    "circular-crop",
+    "electron",
+    "cli",
+    "gui",
+    "credentials",
+    "photo-editing"
+  ],
+  "author": {
+    "name": "Enrique",
+    "email": "servicio@social.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tu-usuario/photoCcrop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/photoCcrop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/photoCcrop/issues"
+  },
+  "bin": {
+    "photoCcrop": "./cli/photoCcrop.js"
+  },
+  "build": {
+    "appId": "com.enrique.photoCcrop",
+    "productName": "PhotoCcrop",
+    "directories": {
+      "output": "dist/gui"
+    },
+    "files": [
+      "gui/**/*",
+      "shared/**/*",
+      "node_modules/sharp/**/*",
+      "node_modules/electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/sharp",
+        "to": "sharp",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "icon": "gui/assets/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "icon": "gui/assets/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "extraFiles": [
+        {
+          "from": "node_modules/sharp/build/Release",
+          "to": "sharp/build/Release",
+          "filter": [
+            "**/*"
+          ]
+        }
+      ],
+      "asarUnpack": [
+        "**/node_modules/sharp/**/*"
+      ],
+      "extraResources": [
+        {
+          "from": "node_modules/electron/dist/",
+          "to": "./",
+          "filter": [
+            "**/*.pak",
+            "**/*.bin",
+            "**/icudtl.dat"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "gui/assets/icon.png",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "@emnapi/runtime": "^1.4.5",
+    "commander": "^14.0.0",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "pkg": "^5.8.1",
+    "rimraf": "^3.0.2"
+  }
+}

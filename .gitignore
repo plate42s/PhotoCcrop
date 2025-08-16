@@ -144,3 +144,4 @@ temp/
 # Package locks (keep yarn.lock if using yarn)
 package-lock.json
 
+.githug/

@@ -28,13 +28,13 @@
     "email": "servicio@social.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/tu-usuario/photoCcrop",
+  "homepage": "https://github.com/plate42s/photoCcrop",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tu-usuario/photoCcrop.git"
+    "url": "https://github.com/plate42s/photoCcrop.git"
   },
   "bugs": {
-    "url": "https://github.com/tu-usuario/photoCcrop/issues"
+    "url": "https://github.com/plate42s/photoCcrop/issues"
   },
   "bin": {
     "photoCcrop": "./cli/photoCcrop.js"

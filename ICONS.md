@@ -19,26 +19,6 @@ Para que la aplicación funcione completamente, necesitas crear los siguientes i
 - **Tamaño**: 512x512
 - **Formato**: PNG con transparencia
 
-## Herramientas Recomendadas
-
-### Online (Gratis)
-- [ICO Convert](https://icoconvert.com/) - Convertir PNG a ICO/ICNS
-- [CloudConvert](https://cloudconvert.com/) - Conversor universal
-- [Favicon.io](https://favicon.io/) - Generador de iconos
-
-### Software
-- **macOS**: Icon Composer (Xcode)
-- **Windows**: IcoFX, Greenfish Icon Editor
-- **Multiplataforma**: GIMP, Figma, Sketch
-
-## Diseño Sugerido
-
-Para el icono de PhotoCcrop, se sugiere:
--  **Colores**: Azul/Morado (tema de la app)
--  **Elementos**: Cámara, círculo, tijeras
--  **Concepto**: Transformación circular de fotos
--  **Estilo**: Moderno, minimalista, profesional
-
 ## Crear Iconos Básicos
 
 Si no tienes iconos personalizados, puedes usar este comando para crear iconos básicos:
@@ -52,9 +32,3 @@ sharp(Buffer.from(svg)).png().toFile('gui/assets/icon.png');
 console.log('Icono básico creado');
 "
 ```
-
-## Nota Importante
-
-- Los iconos son opcionales para desarrollo
-- La aplicación funcionará sin ellos (usará iconos por defecto)
-- Para distribución profesional, se recomienda crear iconos personalizados
